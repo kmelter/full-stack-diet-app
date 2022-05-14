@@ -1,10 +1,18 @@
 const router = require('express').Router();
 
-const { Food } = require('../../models');
+const { Food, Diet, FoodDiet } = require('../../models');
 
 // GET all foods
 router.get('/', (req, res) => {
-    Food.findAll({})
+    Food.findAll({
+        include: [
+            {
+                model: Diet,
+                as: 'safe_diets',
+                through: FoodDiet
+            }
+        ]
+    })
     .then((foodData) => {
         res.json(foodData);
     })

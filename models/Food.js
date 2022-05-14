@@ -16,10 +16,6 @@ Food.init(
         food_name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        keto_safe: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
         }
     },
     {
