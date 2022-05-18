@@ -26,7 +26,27 @@ router.get('/', (req, res) => {
 
 // Create one food
 
-// GET food by diet(s)
+// GET foods by diet(s)
+// currently this only supports using one diet for the search
+router.get('/byDiet/:id', async (req, res) => {
+    try {
+        const dbFoodsData = await Diet.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Food,
+                    as: 'foods',
+                    through: FoodDiet
+                }
+            ]
+        });
+        const foods = dbFoodsData.get({ plain: true });
+        res.render('searchResults', {foods, loggedIn: req.session.loggedIn })
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
 
 // Update one food
 
