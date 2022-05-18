@@ -8,7 +8,7 @@ const withAuth = require('../utils/auth');
 // For now this is what the route will look like
 // Once the landing page is setup, we will display the landing page here
 router.get('/', withAuth, async (req, res) => {
-    res.redirect('/main-page');
+    res.redirect('/mainPage');
 });
 
 router.get('/login', (req, res) => {
