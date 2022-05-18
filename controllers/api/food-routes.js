@@ -34,13 +34,14 @@ router.get('/byDiet/:id', async (req, res) => {
             include: [
                 {
                     model: Food,
-                    as: 'foods',
+                    as: 'safe_foods',
+                    attributes: ['id', 'food_name'],
                     through: FoodDiet
                 }
             ]
         });
-        const foods = dbFoodsData.get({ plain: true });
-        res.render('searchResults', {foods, loggedIn: req.session.loggedIn })
+        const foods = dbFoodsData.get({ plain: true }).safe_foods;
+        res.json(foods);
     }
     catch (err) {
         console.log(err);
