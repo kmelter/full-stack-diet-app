@@ -25,6 +25,34 @@ router.get('/', (req, res) => {
 // GET one food
 
 // Create one food
+router.post('/', (req, res) => {
+    /* req.body should look like this...
+    {
+      food_name: "Chocolate Bar"
+      dietIds: [1, 2, 3]
+    }
+    */
+    Food.create(req.body)
+        .then((food) => {
+            // if there are diet tags, we need to create pairings to bulk create in the FoodDiet model
+            if (req.body.dietIds.length) {
+                const foodDietIdArr = req.body.dietIds.map((diet_id) => {
+                  return {
+                    food_id: food.id,
+                    diet_id,
+                  };
+                });
+                return FoodDiet.bulkCreate(foodDietIdArr);
+              }
+              // if no product tags, just respond
+              res.status(200).json(food);
+        })
+        .then((foodDietIds) => res.status(200).json(foodDietIds))
+        .catch(err => {
+            console.log(err);
+            res.status(400).json(err);
+        })
+})
 
 // GET foods by diet(s)
 // currently this only supports using one diet for the search
