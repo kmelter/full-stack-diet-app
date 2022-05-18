@@ -35,5 +35,29 @@ router.get('/mainPage', async (req, res) => {
     res.status(500).json(err);
   }
 });
-  
-  module.exports = router;
+
+// Render the search results page
+// Currently the route only works with using a single diet.
+// An overhaul would be necessary to use multiple diets
+router.get('/search/:id', withAuth, async (req, res) => {
+  try {
+    const dbFoodsData = await Diet.findByPk(req.params.id, {
+        include: [
+            {
+                model: Food,
+                as: 'safe_foods',
+                attributes: ['id', 'food_name'],
+                through: FoodDiet
+            }
+        ]
+    });
+    const foods = dbFoodsData.get({ plain: true }).safe_foods;
+    res.render('searchResults', { foods, loggedIn: req.session.loggedIn });
+}
+catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+}
+})
+
+module.exports = router;
