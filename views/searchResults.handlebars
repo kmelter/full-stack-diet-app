@@ -1,0 +1,7 @@
+<ol class="food-list">
+  {{#each foods as |food|}}
+  <li>
+    {{> food-info food }} <!-- or should this be something like foodDiet food? -->
+  </li>
+  {{/each}}  
+</ol>
