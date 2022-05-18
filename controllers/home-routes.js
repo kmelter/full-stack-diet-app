@@ -20,9 +20,20 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
-// may want to change the name
-router.get('/mainPage', withAuth, (req, res) => {
-    res.render('mainPage')
-})
+// having the async function here because of the diet request is something we may want to change
+router.get('/mainPage', async (req, res) => {
+  try {
+    const dbDietData = await Diet.findAll({})
+    const diets = dbDietData.map((diet) =>
+      diet.get({ plain: true })
+    );
+    console.log(diets);
+    res.render('mainPage', {diets, loggedIn: req.session.loggedIn})
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
   
   module.exports = router;
