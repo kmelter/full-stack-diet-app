@@ -1,0 +1,31 @@
+<!-- add message at top "select diet" -->
+<article>
+  <h1>Select a Diet and click Search.</h1>
+  <h1>To add a food, enter the food name and click Submit.</h1>
+
+<!-- add drop down list of diets -->
+  <div class="form-group">
+    <select name="diet-type" class="select-dropdown">
+      <option value="Keto">Keto</option> 
+      <option value="Veggie">Vegetarian</option>
+      <option value="Medi">Mediteranean</option>
+    </select>
+  </div>  
+  <div class="form-group">
+    <button class="btn" id="select-diet" type="submit">Submit</button>
+  </div>
+
+<!-- add food button and form field -->
+  <form class="form-group">
+    <div>
+      <input type="text" name="food-name" placeholder="Add food name">  
+    </div>
+    <div>
+      <button type="submit">Add food.</button>
+    </div>
+  </form>
+</article>
+
+<!-- add handlebar here? {{> }} -->
+
+<script src="/js/add-food.js"></script>
