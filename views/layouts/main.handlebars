@@ -10,22 +10,24 @@
 </head>
 
 <body>
-  <header>
-    <h1>Can I eat you?</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-    <div class="gallery">
-      {{{body}}}
-    </div>
-  </main>
+  <div class="wrapper">  
+    <header>
+      <h1>Can I eat you?
+      </h1>
+      <nav>
+        {{#if loggedIn}}
+        <!-- <a href="/"></a> insert file name to take to main page -->
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </header>  
+    <main>
+        {{{body}}}
+    </main>
+  </div>  
+
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
