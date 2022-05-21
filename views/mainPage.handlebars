@@ -4,11 +4,12 @@
   <h1>To add a food, enter the food name and click Submit.</h1>
 
 <!-- add drop down list of diets -->
+
   <div class="form-group">
-    <select name="diet-type" class="select-dropdown">
-      <option value="Keto">Keto</option> 
-      <option value="Veggie">Vegetarian</option>
-      <option value="Medi">Mediteranean</option>
+    <select name="diet-type" id="diet-search" class="select-dropdown">
+      <option value="1">Keto</option> 
+      <option value="2">Vegan</option>
+      <option value="3">Paleo</option>
     </select>
   </div>  
   <div class="form-group">
@@ -29,3 +30,4 @@
 {{!-- add handlebar here? {{> }} --}}
 
 <script src="/js/add-food.js"></script>
+<script src="/js/search.js"></script>
