@@ -7,9 +7,12 @@
 
   <div class="form-group">
     <select name="diet-type" id="diet-search" class="select-dropdown">
-      <option value="1">Keto</option> 
+      {{!-- <option value="1">Keto</option> 
       <option value="2">Vegan</option>
-      <option value="3">Paleo</option>
+      <option value="3">Paleo</option> --}}
+      {{#each diets as |diet|}}
+      <option value="{{diet.id}}">{{diet.diet_name}}</option>
+      {{/each}}
     </select>
   </div>  
   <div class="form-group">
