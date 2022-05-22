@@ -172,3 +172,7 @@
     position: initial !important;
     pointer-events:all !important;
   }
+
+  .select-dropdown {
+    display: block !important;
+  }
