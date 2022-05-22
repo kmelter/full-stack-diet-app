@@ -20,30 +20,30 @@
     <!-- add food button and form field -->
     <form class="white-text form-group">
       <div>
-        <input class="#ffffff white-text" type="text" name="food-name" placeholder="Add food name">
+        <input class="#ffffff white-text" type="text" id="food-input" name="food-name" placeholder="Add food name">
       </div>
       <div>
         <div class="row">
           <div class="col s8 offset-s2">
-            <input class="checkbox" type="checkbox" id="keto-select" name="Keto" value="1">
+            <input class="checkbox" type="checkbox" id="keto-select" name="diet" value="1">
             <label for="keto-select">Keto</label>
           </div>
         </div>
         <div class="row">
           <div class="col s8 offset-s2">
-            <input class="checkbox" type="checkbox" id="vegan-select" name="Vegan" value="2">
+            <input class="checkbox" type="checkbox" id="vegan-select" name="diet" value="2">
             <label for="vegan-select">Vegan</label>
           </div>
         </div>
         <div class="row">
           <div class="col s8 offset-s2">
-            <input class="checkbox" type="checkbox" id="paleo-select" name="Paleo" value="3">
+            <input class="checkbox" type="checkbox" id="paleo-select" name="diet" value="3">
             <label for="paleo-select">Paleo</label>
           </div>
         </div>
       </div>
       <div>
-        <button class="teal lighten-2 #ffffff white-text" type="submit">Add food.</button>
+        <button class="teal lighten-2 #ffffff white-text" id="add-food" type="submit">Add food.</button>
       </div>
     </form>
   </article>
