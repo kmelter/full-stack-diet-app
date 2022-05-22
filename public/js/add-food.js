@@ -22,8 +22,10 @@ const addFood = (event) => {
 
     if (response.ok) {
         console.log('Food added successfully!');
+        window.alert("Food added successfully!");
     } else {
         console.log('Food added');
+        window.alert("Food added successfully!");
     }
     
 };
