@@ -1,9 +1,7 @@
 const addFood = (event) => {
     event.preventDefault();
-    console.log('here');
 
     const food_name = document.querySelector('#food-input').value;
-    // let food_name = foodInput.toString();
     let dietSelect = document.querySelectorAll('input[name="diet"]:checked');
     let output = [];
     dietSelect.forEach((checkbox) => {
