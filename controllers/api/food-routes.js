@@ -35,12 +35,12 @@ router.post('/', (req, res) => {
 
     Food.create({
             food_name: req.body.food_name,
-            dietIds: req.body.output
+            dietIds: req.body.dietIds
         })
         .then((food) => {
             // if there are diet tags, we need to create pairings to bulk create in the FoodDiet model
-            if (req.body.output.length) {
-                const foodDietIdArr = req.body.output.map((diet_id) => {
+            if (req.body.dietIds.length) {
+                const foodDietIdArr = req.body.dietIds.map((diet_id) => {
                   return {
                     food_id: food.id,
                     diet_id,
