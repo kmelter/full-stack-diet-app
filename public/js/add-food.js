@@ -5,11 +5,9 @@ const addFood = (event) => {
     let dietSelect = document.querySelectorAll('input[name="diet"]:checked');
     let dietIds = [];
     dietSelect.forEach((checkbox) => {
-        let parsedInt = parseInt(checkbox.id);
+        let parsedInt = parseInt(checkbox.value);
         dietIds.push(parsedInt);
     });
-
-    console.log(dietIds);
     
     const response = fetch(`/api/foods`, {
         method: 'POST',

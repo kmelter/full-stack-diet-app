@@ -47,7 +47,7 @@
         {{#each diets as |diet|}}
         <div class="row">
           <div class="col s8 offset-s2">
-            <input class="checkbox" type="checkbox" id="{{diet.id}}-select" name="diet" value="1">
+            <input class="checkbox" type="checkbox" id="{{diet.id}}-select" name="diet" value="{{diet.id}}">
             <label for="{{diet.id}}-select">{{diet.diet_name}}</label>
           </div>
         </div>
