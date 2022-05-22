@@ -1,7 +1,7 @@
 <!-- add message at top "select diet" -->
 <article>
-  <h1>Select a Diet and click Search.</h1>
-  <h1>To add a food, enter the food name and click Submit.</h1>
+  <h1>Select a Diet and click Submit.</h1>
+  <h1>To add a food, enter the food name and click Add Food</h1>
 
 <!-- add drop down list of diets -->
 
@@ -19,24 +19,24 @@
 <!-- add food button and form field -->
   <form class="form-group">
     <div>
-      <input type="text" name="food-name" placeholder="Add food name">  
+      <input type="text" id="food-input" name="food-name" placeholder="Add food name">  
     </div>
-    <div>
+    <div id="diet-checkboxes">
       <div>
-        <input type="checkbox" id="keto-select" name="Keto" value="1">
+        <input type="checkbox" id="keto-select" name="diet" value="1">
         <label for="keto-select">Keto</label>
       </div>
       <div>
-        <input type="checkbox" id="vegan-select" name="Vegan" value="2">
+        <input type="checkbox" id="vegan-select" name="diet" value="2">
         <label for="vegan-select">Vegan</label>
       </div>
       <div>
-        <input type="checkbox" id="paleo-select" name="Paleo" value="3">
+        <input type="checkbox" id="paleo-select" name="diet" value="3">
         <label for="paleo-select">Paleo</label>
       </div>
     </div>
     <div>
-      <button type="submit">Add food.</button>
+      <button type="submit" id="add-food">Add Food</button>
     </div>
   </form>
 </article>
