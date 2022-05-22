@@ -979,13 +979,13 @@ a:hover {
   border-radius: 0.3rem;
   border: 1px solid transparent;
   outline: none;
-  color: #1a1a1a;
+  color: white;
   background-color: #aeaeae;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #cecece;
+  background-color: white;
 }
 
 .btn.btn-squared {

@@ -1,8 +1,8 @@
 :root {
-    --primary: #3d5852;
-    --secondary: #86938f;
-    --tertiary: #5e877f;
-    --quatrinary: #6c6b67;
+    --primary: #1e2c47;
+    --secondary: #939ab9;
+    --tertiary: #132885;
+    --quatrinary: #676a6c;
     --light: #e3e4e3;
     --dark: #182c23;
     --error: rgb(228, 46, 1);
@@ -116,15 +116,14 @@
   }
   
   .login-card {
-    margin: 0 0 20px 0;
+    margin: 50px 0 50px 0;
     flex: 0 0 50%;
-    max-width: 50%;
-    padding: 5px;
+    padding: 25px;
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
     border-style: double;
     border-width: thick;
-    background-color: #577a7c;
+    background-color:#939ab9;
     color: var(--light);
   }
   
@@ -159,7 +158,17 @@
   .container {
     display: flex;
     flex-flow: column wrap;
-    align-content: flex-start;
+    align-content: center;
     align-items: center;
   }
+
+  .h1 {
+    color: white;
+    align-content: center;
+  }
   
+  .checkbox {
+    opacity: 1 !important;
+    position: initial !important;
+    pointer-events:all !important;
+  }

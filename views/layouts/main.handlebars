@@ -7,6 +7,7 @@
   <title>Diet App</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <header>
       <h1>Can I eat you?
       </h1>
-      <nav>
+      <nav class="indigo lighten-3">
         {{#if loggedIn}}
         <!-- <a href="/"></a> insert file name to take to main page/screen where we select diet and add food -->
         <button id="logout" class="btn-no-style">Logout</button>
@@ -30,6 +31,7 @@
 
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   {{/if}}
 </body>
 
